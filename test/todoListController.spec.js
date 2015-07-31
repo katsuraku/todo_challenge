@@ -8,16 +8,16 @@ describe('TodoListController', function() {
   }));
 
   it('initialises with an empty task list and empty add tasks box', function() {
-    // expect(ctrl.taskList).toBeUndefined();
-    expect(ctrl.addTask).toBeUndefined();
+    expect(ctrl.taskList).toBeUndefined();
+    expect(ctrl.newTask).toBeUndefined();
   });
 
   describe('when adding a task', function() {
 
-  var task = 'Learn Angular';
-
-  it('displays the task in the to do list', function() {
-    expect(ctrl.taskList).toEqual(task);
+    it('displays the task in the to do list', function() {
+      ctrl.newTask = 'Learn Angular';
+      ctrl.addTask();
+      expect(ctrl.taskList).toEqual('Learn Angular');
+    });
   });
-});
 });

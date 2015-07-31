@@ -5,5 +5,4 @@ todoList.controller('TodoListController', [function() {
     self.taskList = self.newTask
   }
 
-  self.taskList = "Learn Angular"
 }]);

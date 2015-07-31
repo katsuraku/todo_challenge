@@ -33,4 +33,13 @@ describe('TodoListController', function() {
       expect(ctrl.taskList).toEqual(items);
     });
   });
+
+  describe('when editing a task', function() {
+
+    it('changes the text of the task according to what the user types in', function() {
+      ctrl.newTask = 'Learn Angular';
+      ctrl.editTask('');
+      expect(ctrl.taskList).toEqual()
+    }')
+  }
 });

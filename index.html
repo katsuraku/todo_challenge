@@ -7,6 +7,10 @@
     <script src="bower_components/jquery/dist/jquery.js"></script>
     <script src="bower_components/angular/angular.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+
+  <style>
+  .done{text-decoration: line-through; color: grey;}
+  </style>
   </head>
 
   <body ng-controller="TodoListController as listCtrl">
@@ -21,7 +25,7 @@
           <li class="list-group-item">
             <input type="checkbox" ng-model="task.done">
             <!-- {{$index}} -->
-            {{task.title}}
+            <span ng-class="{'done':task.done}">{{task.title}}</span>
           </li>
         </ul>
     </div>

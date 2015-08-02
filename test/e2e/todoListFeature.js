@@ -1,7 +1,8 @@
 describe('Todo list', function() {
 
   var addTaskBox = element(by.model('listCtrl.newTask'))
-  var addButton = element(by.className('btn'))
+  var addButton = element(by.className('addBtn'))
+  var deleteButton = element(by.className('delBtn'))
 
   beforeEach(function() {
     browser.get('http://localhost:8080');
@@ -34,12 +35,22 @@ describe('Todo list', function() {
     // expect(tasks.get(1).getText()).toEqual('Go outside');
   });
 
-  xit('should know a task is done when the associated box is checked', function() {
-    var taskStatus = element(by.binding('task.done'));
-    expect(taskStatus.getText()).toContain('false');
-    element(by.model('task.done')).click();
-    expect(taskStatus.getText()).toContain('true');
+  // it('should know a task is done when the associated box is checked', function() {
+  //   var taskStatus = element(by.binding('task.done'));
+  //   expect(taskStatus.toEqual('false');
+  //   element(by.model('task.done')).click();
+  //   expect(taskStatus.toEqual('true')
+  // });
+
+  it('removes tasks marked as done when the delete button is clicked', function() {
+    var tasks = element.all(by.repeater('task in listCtrl.taskList'))
+
+    addTaskBox.sendKeys('Find marbles');
+    addButton.click();
+    addTaskBox.sendKeys('Go outside');
+    addButton.click();
+    element.all(by.model('task.done')).get(0).click();
+    deleteButton.click();
+    expect(tasks).toEqual('Go outside')
   });
-
-
 });

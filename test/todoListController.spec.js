@@ -44,6 +44,18 @@ describe('TodoListController', function() {
     });
   });
 
+  describe('when deleting tasks that are marked as done', function() {
+    xit('removes the tasks that have been marked done from the list', function() {
+      ctrl.newTask = {title:'Find Nemo', done: false};
+      ctrl.addTask();
+      ctrl.newTask = {title:'Ascend', done: false};
+      ctrl.addTask();
+      // ACTION TO REPRESENT CHECKING BOX TO MARK TASK DONE ON SECOND TASK
+      ctrl.deleteDone();
+      expect(ctrl.taskList).toEqual({title:'Find Nemo', done: false})
+    });
+  });
+
   // describe('when editing a task', function() {
   //
   //   it('changes the text of the task according to what the user types in', function() {

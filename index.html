@@ -20,7 +20,8 @@
         <ul class="list-group" ng-repeat="task in listCtrl.taskList">
           <li class="list-group-item">
             <input type="checkbox" ng-model="task.done">
-            {{$index}}{{task.title}}
+            <!-- {{$index}} -->
+            {{task.title}}
           </li>
         </ul>
     </div>

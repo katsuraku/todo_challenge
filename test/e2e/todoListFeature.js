@@ -34,4 +34,12 @@ describe('Todo list', function() {
     // expect(tasks.get(1).getText()).toEqual('Go outside');
   });
 
+  xit('should know a task is done when the associated box is checked', function() {
+    var taskStatus = element(by.binding('task.done'));
+    expect(taskStatus.getText()).toContain('false');
+    element(by.model('task.done')).click();
+    expect(taskStatus.getText()).toContain('true');
+  });
+
+
 });

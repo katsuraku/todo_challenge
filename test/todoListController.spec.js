@@ -17,13 +17,13 @@ describe('TodoListController', function() {
     it('displays the task in the to do list', function() {
       ctrl.newTask = 'Learn Angular';
       ctrl.addTask();
-      expect(ctrl.taskList).toEqual(['Learn Angular']);
+      expect(ctrl.taskList).toEqual([{title:'Learn Angular', done:false}]);
     });
   });
 
   describe('when adding another task', function() {
 
-    var items = ['Learn Angular', 'Buy irn bru']
+    var items = [{title:'Learn Angular', done:false}, {title:'Buy irn bru', done:false}]
 
     it('displays both the first task and the new task in the to do list', function() {
       ctrl.newTask = 'Learn Angular';
@@ -34,12 +34,22 @@ describe('TodoListController', function() {
     });
   });
 
-  describe('when editing a task', function() {
+  describe('when marking a task done', function() {
 
-    it('changes the text of the task according to what the user types in', function() {
-      ctrl.newTask = 'Learn Angular';
-      ctrl.editTask('');
-      expect(ctrl.taskList).toEqual()
-    }')
-  }
+    xit('displays the task text in grey and struck through', function() {
+      ctrl.newTask = {title:'Find Nemo', done: false};
+      ctrl.addTask();
+      // ACTION TO REPRESENT CHECKING BOX TO MARK TASK DONE
+      expect(ctrl.taskList).toEqual({title:'Find Nemo', done: true})
+    });
+  });
+
+  // describe('when editing a task', function() {
+  //
+  //   it('changes the text of the task according to what the user types in', function() {
+  //     ctrl.newTask = 'Learn Angular';
+  //     ctrl.editTask('');
+  //     expect(ctrl.taskList).toEqual()
+  //   })
+  // }
 });

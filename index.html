@@ -19,13 +19,13 @@
       <h2> Task list </h2>
         <ul class="list-group" ng-repeat="task in listCtrl.taskList">
           <li class="list-group-item">
+            <input type="checkbox" ng-model="task.done">
             {{$index}}{{task.title}}
-            <input type="checkbox" ng-checked="listCtrl.isChecked({{$index}})">
-
-
-
           </li>
         </ul>
+    </div>
+    <div>
+      <button class="btn" ng-click="listCtrl.deleteDone()">Delete tasks marked done</button>
     </div>
   <script src="js/app.js"></script>
   <script src="js/todoListController.js"></script>

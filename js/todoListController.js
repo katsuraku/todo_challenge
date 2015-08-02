@@ -4,7 +4,16 @@ todoList.controller('TodoListController', [function() {
   self.taskList = [];
 
   self.addTask = function() {
-    (self.taskList).push(self.newTask);
+    // var task = {title: self.newTask}
+    (self.taskList).push({title: self.newTask, done: false});
   }
+
+  // self.deleteTask = function() {
+  //   (self.taskList).remove(self.thisTask)
+  // }
+
+  // self.isChecked = function(index) {
+  //
+  // }
 
 }]);

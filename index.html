@@ -19,7 +19,11 @@
       <h2> Task list </h2>
         <ul class="list-group" ng-repeat="task in listCtrl.taskList">
           <li class="list-group-item">
-            {{task}}
+            {{$index}}{{task.title}}
+            <input type="checkbox" ng-checked="listCtrl.isChecked({{$index}})">
+
+
+
           </li>
         </ul>
     </div>

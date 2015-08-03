@@ -1,5 +1,11 @@
 # Todo Challenge
 
+- Tasks can be added.
+- Form needs to be set to empty after the Add button is clicked.
+- Tasks can be marked done using checkboxes.
+- Tasks marked done can be removed from the list by clicking the delete done button.
+- Buttons exist for filtering tasks between all/done/active but need to do the filter code and connect it up to the task list.
+
 * Deadline: submit completed pull request by 9am on Monday
 * You may use whatever level of JavaScript you feel comfortable with - pure JS, jQuery, Angular, or whatever weird and wonderful framework you want to try. Extra points for DogeScript
 

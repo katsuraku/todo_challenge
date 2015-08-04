@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/katsuraku/todo_challenge",
   "devDependencies": {
+    "bower": "^1.4.1",
     "jasmine-core": "^2.3.4",
     "karma": "^0.13.3",
     "karma-chrome-launcher": "^0.2.0",

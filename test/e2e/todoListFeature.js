@@ -1,12 +1,12 @@
 describe('Todo list', function() {
 
-  var addTaskBox = element(by.model('listCtrl.newTask'))
-  var addButton = element(by.className('addBtn'))
-  var deleteButton = element(by.className('delBtn'))
+  var addTaskBox = element(by.model('listCtrl.newTask'));
+  var addButton = element(by.className('addBtn'));
+  var deleteButton = element(by.className('delBtn'));
 
   beforeEach(function() {
     browser.get('http://localhost:8080');
-  })
+  });
 
   it('has a title', function() {
     browser.get('http://localhost:8080');
@@ -16,7 +16,7 @@ describe('Todo list', function() {
 
   it('displays a task', function() {
 
-    var tasks = element.all(by.repeater('task in listCtrl.taskList'))
+    var tasks = element.all(by.repeater('task in listCtrl.taskList'));
 
     addTaskBox.sendKeys('Find marbles');
     addButton.click();
@@ -25,7 +25,7 @@ describe('Todo list', function() {
 
   it('displays multiple tasks', function() {
 
-    var tasks = element.all(by.repeater('task in listCtrl.taskList'))
+    var tasks = element.all(by.repeater('task in listCtrl.taskList'));
 
     addTaskBox.sendKeys('Find marbles');
     addButton.click();
@@ -43,7 +43,7 @@ describe('Todo list', function() {
   // });
 
   it('removes tasks marked as done when the delete button is clicked', function() {
-    var tasks = element.all(by.repeater('task in listCtrl.taskList'))
+    var tasks = element.all(by.repeater('task in listCtrl.taskList'));
 
     addTaskBox.sendKeys('Find marbles');
     addButton.click();
@@ -51,6 +51,6 @@ describe('Todo list', function() {
     addButton.click();
     element.all(by.model('task.done')).get(0).click();
     deleteButton.click();
-    expect(tasks).toEqual('Go outside')
+    expect(tasks).toEqual('Go outside');
   });
 });
